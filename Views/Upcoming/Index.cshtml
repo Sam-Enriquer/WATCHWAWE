@@ -1,0 +1,72 @@
+﻿@model List<Upcoming>
+
+
+<h2 class="text-center mb-5">List of Upcomings</h2>
+
+<div class="row mb-5">
+
+    <div class="col">
+
+        <a class="btn btn-primary" asp-controller="Upcoming" asp-action="Create">New Upcoming</a>
+
+    </div>
+
+    <div class="col">
+    </div>
+
+</div>
+
+<table class="table">
+
+
+    <thead>
+
+
+        <tr>
+
+            <th>ID</th>
+
+            <th>Name</th>
+
+            <th>Genre</th>
+
+            <th>Image</th>
+
+            <th> Created At</th>
+
+            <th>Action</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+        @foreach (var Upcoming in Model)
+        {
+            <tr>
+                <td>@Upcoming.Id</td>
+
+                <td>@Upcoming.Name</td>
+
+                <td>@Upcoming.Genre</td>
+
+                [
+                <td><img src="/Upcomings/@Upcoming. ImageFileName" width="100" /></td>
+
+                <td>@Upcoming.CreatedAT.ToString("MM/dd/yyyy")</td>
+
+                <td style="white-space: nowrap">
+
+                    <a class="btn btn-primary btn-sm" asp-controller="Upcoming" asp-action="Edit" asp-route-id="@Upcoming.Id">Edit</a>
+
+                    <a class="btn btn-danger btn-sm" asp-controller="Upcoming" asp-action="Delete" asp-route-id="@Upcoming.Id" onclick="return confirm('Are you sure ?')">Delete</a>
+
+                </td>
+            </tr>
+        }
+
+
+
+    </tbody>
+
+</table>

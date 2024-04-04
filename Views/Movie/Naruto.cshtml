@@ -1,0 +1,87 @@
+﻿@{
+    ViewData["Title"] = "Naruto";
+
+}
+
+<style>
+    
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="~/css/ie6.css" asp-append-version="true" />
+</style>
+<title>Anime Description Page</title>
+<body>
+    
+    <div id="shell">
+       
+        <div id="content">
+            <div class="box">
+                <div class="head">
+                    <h3>NARUTO</h3>
+                </div>
+                <div class="movie">
+                    <div class="movie-image">
+                        <img src="~/css/images/naruto.jpg" alt="Anime Cover">
+                        <div class="play"></div>
+                    </div>
+                    
+                </div>
+                
+                <div class="rating">
+                    <p>Rating: 4.5/5</p>
+                    <div class="stars">
+                        <div class="stars-in"></div>
+                    </div>
+                </div>
+                <div class="comments">100 Comments</div>
+                <div class="cl"></div>
+                <div class="content">
+                    <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor metus non lacus finibus, ac luctus libero ullamcorper. Fusce sollicitudin, quam id laoreet tincidunt, dolor libero luctus metus, eu congue metus lacus nec lorem.</p>
+                    <p>Number of Episodes: 12</p>
+                    <p>Genres: Action, Adventure, Comedy</p>
+                    <p>Status: Ongoing</p>
+                    <p>Release Year: 2022</p>
+                </div>
+                @* <div class="episode-dropdown">
+                    <label for="episode-select">Select Number of Episodes:</label>
+                    <select id="episode-select" onchange="goToEpisode(this)">
+                        <option value="#">Select Episode</option>
+                        <option value="@Url.Action("episode1","movie")">Episode 1</option>
+                        <option value="@Url.Action("episode2","movie")">Episode 2</option>
+                        <!-- Add more episodes as needed -->
+                    </select>
+                </div>
+                <div id="video-container">
+                    <!-- Embed the video using an iframe -->
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/hlRTxA10eRA?si=R8-nwRE2zrdS2CA1" 
+                    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div> *@
+                <div class="episode-dropdown">
+                    <label for="episode-select">Select Number of Episodes:</label>
+                    <select id="episode-select" onchange="goToEpisode(this)">
+                        <option value="#">Select Episode</option>
+                        <option value="https://www.youtube.com/embed/hlRTxA10eRA?si=R8-nwRE2zrdS2CA1">Episode 1</option>
+                        <option value="https://www.youtube.com/embed/ZGEGEeANyO8?si=8K451nOlFF71uf9y">Episode 2</option>
+                       
+                        <!-- Add more episodes as needed -->
+                    </select>
+                </div>
+
+                <div id="video-container">
+                    <!-- Embedded video will be loaded here -->
+                </div>
+
+                <script>
+                    function goToEpisode(select) {
+                        var videoUrl = select.value;
+                        if (videoUrl !== "#") {
+                            var videoContainer = document.getElementById("video-container");
+                            videoContainer.innerHTML = '<iframe width="560" height="315" src="' + videoUrl + '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+                        }
+                    }
+                </script>
+
+            </div>
+        </div>
+    </div>
+</body>
+

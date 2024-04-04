@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WATCHWAWE</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WATCHWAWE.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/ie6.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    <script type="text/javascript" src="~/js/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="~/js/jquery-func.js"></script>
+
+</head>
+<body>
+    <div id="header">
+        <h1 id="logo"><a href="#">MovieHunter</a></h1>
+
+        <div id="navigation">
+            <ul>
+                <li><a class="" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                <li>
+                    <a class="" asp-area="" asp-controller="Home" asp-action="Genres">Genres</a>
+                </li>
+                <li>
+                    <a class="" asp-area="" asp-controller="Home" asp-action="Movies">Movies</a>
+                </li>
+                <li>
+                    <a class="" asp-area="" asp-controller="Upcoming" asp-action="Index">Upcoming</a>
+                </li>
+                <li>
+                    <a class="" asp-area="" asp-controller="Home" asp-action="Contact">Contact Us</a>
+                </li>
+                <li>
+                    <a class="" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
+                </li> 
+                
+            </ul>
+            
+
+        </div>
+        <div id="sub-navigation">
+            <div id="search">
+                <form action="#" method="get" accept-charset="utf-8">
+                    <label for="search-field">SEARCH</label>
+                    <input type="text" name="search field" value="Enter search here" id="search-field" class="blink search-field" />
+                    <input type="submit" value="GO!" class="search-button" />
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <div id="footer">
+    <p class="lf">Copyright &copy; 2024 <a href="#">WATCHWAVE</a> - All Rights Reserved</p>
+    <p class="rf">Design by SANJAY AND SHRUTI</p>
+    <div style="clear:both;"></div>
+  </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

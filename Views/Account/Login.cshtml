@@ -1,0 +1,53 @@
+﻿@using WATCHWAWE.ViewModels;
+@model LoginVM
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Login Page</title>
+    <link rel="stylesheet" href="~/css/AStyleSheet.css">
+</head>
+<body>
+    <div class="main">
+       
+        <video autoplay loop muted plays-inline class="vid">
+            <source src="~/lib/anime.mp4">
+        </video>
+        <div class="card">
+            <form>
+                <h1>Login Here</h1>
+                <div class="inputbox">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <input type="Email" required>
+                    <label for="">Email</label>
+                </div>
+                <div class="inputbox">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="password" required>
+                    <label for="">Password</label>
+                </div>
+                <div class="forget">
+                    <label for=""><input type="checkbox">Remember Me</label>
+                    <a href="#">Forget Password</a>
+                </div>
+                <button>Log in</button>
+                <div class="register">
+                    <p>Don't have a account <a href="#">Register</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+</html>
